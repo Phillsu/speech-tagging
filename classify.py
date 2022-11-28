@@ -22,14 +22,16 @@ for test in test_generator:
         testing_true.append([p for p in tags[i].numpy() if p != 0])
 
 # 印出第十筆來測試
-print_index = 10
-word = X_test[print_index]
-pred = testing_preds[print_index]
-true = testing_true[print_index]
+print_index = 0
+while print_index < 10:
+    word = X_test[print_index]
+    pred = testing_preds[print_index]
+    true = testing_true[print_index]
 
-pred_tag = [index_to_tag[t] for t in pred]
-true_tag = [index_to_tag[t] for t in true]
+    pred_tag = [index_to_tag[t] for t in pred]
+    true_tag = [index_to_tag[t] for t in true]
 
-print('Input words: \n', word)
-print('Prediction: \n', pred_tag)
-print('True: \n', true_tag)
+    print('Input words: \n', word)
+    print('Prediction: \n', pred_tag)
+    print('True: \n', true_tag)
+    print_index += 1
